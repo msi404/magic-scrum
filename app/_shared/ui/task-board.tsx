@@ -83,7 +83,7 @@ export const TaskBoard = () => {
 
 		const activeTask = tasks.find((t: Task) => t.id === active.id);
 		const overTask = tasks.find((t: Task) => t.id === over.id);
-		
+
 		if (!activeTask || !overTask) return;
 
 		// If dragging over a task, update the status to match the over task's status

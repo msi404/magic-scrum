@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🦄 Unicorn Scrum
 
-## Getting Started
+**Unicorn Scrum** is a modern, web-based Scrum management application designed to be fast, clean, and developer-friendly. Built with cutting-edge tools and thoughtful architecture, it delivers a smooth project planning experience — with just a hint of magic. ✨
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+* 🧩 **Drag & Drop** board powered by `dnd-kit`
+* ⚡ **Redux Toolkit + Redux Query** for efficient state and data management
+* 🎨 **Tailwind CSS** for sleek, responsive UI
+* 🧱 **Feature-Sliced Design (FSD)** for scalable, modular architecture
+* 🧼 **Clean Code** principles throughout
+* 🔁 **CRUD operations** with *nearly* **Optimistic UI** updates
+* 🎭 **Framer Motion** animations for a delightful UX
+* 🔧 **React + Next.js** for fast and flexible rendering
+
+---
+
+## 🏗️ Tech Stack
+
+| Tool            | Purpose                    |
+| --------------- | -------------------------- |
+| `React`         | UI Framework               |
+| `Next.js`       | SSR & routing              |
+| `Redux Toolkit` | State management           |
+| `RTK Query`     | Data fetching & caching    |
+| `dnd-kit`       | Drag & drop functionality  |
+| `Tailwind CSS`  | Utility-first styling      |
+| `Framer Motion` | UI animations              |
+| `FSD`           | Scalable project structure |
+
+---
+
+---
+
+## 🔧 Development
+
+### 🛠️ Install Dependencies
+
+```bash
+npm install
+```
+
+### 🚀 Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Todo / Improvements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* [ ] Full optimistic updates for CRUD
+* [ ] Role-based access control (RBAC)
+* [ ] Unit + E2E tests
+* [ ] Realtime sync with WebSocket
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+PRs are welcome! Make your code readable, modular, and magical. 🌈
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📜 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+MIT — Feel free to use, modify, and deploy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

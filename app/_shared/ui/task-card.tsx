@@ -21,9 +21,12 @@ type Task = {
 };
 
 const statusGradients = {
-	"to do": "bg-gradient-to-br from-green-50/80 via-green-100/80 to-green-200/80 dark:from-green-900/80 dark:via-green-800/80 dark:to-green-700/80 border-green-100/20 dark:border-green-800/20",
-	progress: "bg-gradient-to-br from-yellow-50/80 via-yellow-100/80 to-yellow-200/80 dark:from-yellow-900/80 dark:via-yellow-800/80 dark:to-yellow-700/80 border-yellow-100/20 dark:border-yellow-800/20",
-	complete: "bg-gradient-to-br from-blue-50/80 via-blue-100/80 to-blue-200/80 dark:from-blue-900/80 dark:via-blue-800/80 dark:to-blue-700/80 border-blue-100/20 dark:border-blue-800/20",
+	"to do":
+		"bg-gradient-to-br from-green-50/80 via-green-100/80 to-green-200/80 dark:from-green-900/80 dark:via-green-800/80 dark:to-green-700/80 border-green-100/20 dark:border-green-800/20",
+	progress:
+		"bg-gradient-to-br from-yellow-50/80 via-yellow-100/80 to-yellow-200/80 dark:from-yellow-900/80 dark:via-yellow-800/80 dark:to-yellow-700/80 border-yellow-100/20 dark:border-yellow-800/20",
+	complete:
+		"bg-gradient-to-br from-blue-50/80 via-blue-100/80 to-blue-200/80 dark:from-blue-900/80 dark:via-blue-800/80 dark:to-blue-700/80 border-blue-100/20 dark:border-blue-800/20",
 } as const;
 
 type TaskCardProps = {
@@ -78,21 +81,29 @@ export const TaskCard = ({
 		<Card
 			ref={setNodeRef}
 			style={style}
-			className={`p-4 cursor-grab active:cursor-grabbing ${statusGradients[task.status]} backdrop-blur-sm border shadow-lg hover:shadow-xl transition-all duration-300 ${isDragging ? 'opacity-90' : ''}`}
+			className={`p-4 cursor-grab active:cursor-grabbing ${
+				statusGradients[task.status]
+			} backdrop-blur-sm border shadow-lg hover:shadow-xl transition-all duration-300 ${
+				isDragging ? "opacity-90" : ""
+			}`}
 			{...attributes}
 			{...listeners}
 		>
 			<CardContent className="p-0">
 				<div className="space-y-3">
-					<h4 className="font-medium bg-gradient-to-r from-orange-500 to-purple-500 dark:from-orange-400 dark:to-purple-400 bg-clip-text text-transparent">{task.title}</h4>
+					<h4 className="font-medium bg-gradient-to-r from-orange-500 to-purple-500 dark:from-orange-400 dark:to-purple-400 bg-clip-text text-transparent">
+						{task.title}
+					</h4>
 					<p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 						{task.description}
 					</p>
-					<p className="text-xs text-gray-500 dark:text-gray-500">{task.date}</p>
+					<p className="text-xs text-gray-500 dark:text-gray-500">
+						{task.date}
+					</p>
 					<div className="flex justify-end gap-2 pt-2">
-						<Button 
-							variant="secondary" 
-							size="sm" 
+						<Button
+							variant="secondary"
+							size="sm"
 							onClick={onEdit}
 							className="bg-white/90 dark:bg-gray-900/90 hover:bg-white dark:hover:bg-gray-900 backdrop-blur-sm border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 shadow-sm hover:shadow transition-all duration-300"
 						>
@@ -154,13 +165,13 @@ export const TaskCard = ({
 				<motion.div
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
-					exit={{ 
-						opacity: 0, 
+					exit={{
+						opacity: 0,
 						scale: 0.8,
-						transition: { 
+						transition: {
 							duration: 0.3,
-							ease: "easeInOut"
-						}
+							ease: "easeInOut",
+						},
 					}}
 					layout
 				>
