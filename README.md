@@ -8,6 +8,7 @@
 
 * 🧩 **Drag & Drop** board powered by `dnd-kit`
 * ⚡ **Redux Toolkit + Redux Query** for efficient state and data management
+* 🧮 **TanStack Table** for powerful, headless table logic
 * 🎨 **Tailwind CSS** for sleek, responsive UI
 * 🧱 **Feature-Sliced Design (FSD)** for scalable, modular architecture
 * 🧼 **Clean Code** principles throughout
@@ -19,16 +20,17 @@
 
 ## 🏗️ Tech Stack
 
-| Tool            | Purpose                    |
-| --------------- | -------------------------- |
-| `React`         | UI Framework               |
-| `Next.js`       | SSR & routing              |
-| `Redux Toolkit` | State management           |
-| `RTK Query`     | Data fetching & caching    |
-| `dnd-kit`       | Drag & drop functionality  |
-| `Tailwind CSS`  | Utility-first styling      |
-| `Framer Motion` | UI animations              |
-| `FSD`           | Scalable project structure |
+| Tool             | Purpose                    |
+| ---------------- | -------------------------- |
+| `React`          | UI Framework               |
+| `Next.js`        | SSR & routing              |
+| `Redux Toolkit`  | State management           |
+| `RTK Query`      | Data fetching & caching    |
+| `TanStack Table` | Advanced table handling    |
+| `dnd-kit`        | Drag & drop functionality  |
+| `Tailwind CSS`   | Utility-first styling      |
+| `Framer Motion`  | UI animations              |
+| `FSD`            | Scalable project structure |
 
 ---
 
