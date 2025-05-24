@@ -9,7 +9,7 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/app/_shared/ui/popover"
-import { useEditTask } from './use-edit-task';
+import { useEditTask } from '@/app/_shared/models/use-edit-task';
 
 export const useColumns = () =>
 {

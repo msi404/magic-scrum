@@ -1,3 +1,5 @@
+'use client'
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCreateTaskMutation } from "@/app/_shared/api/tasksApi";
@@ -13,7 +15,6 @@ import {
 import { Input } from "@/app/_shared/ui/input";
 import { Button } from "@/app/_shared/ui/button";
 import { DynamicDialog } from "@/app/_shared/ui/dynamic-dialog";
-import { useState } from "react";
 import {
   Select,
   SelectContent,
