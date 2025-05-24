@@ -59,7 +59,7 @@ npm run dev
 
 ## 🤝 Contributing
 
-PRs are welcome! Make your code readable, modular, and magical. 🌈
+PRs are welcome! Make your code readable, modular, and magical.
 
 ---
 
