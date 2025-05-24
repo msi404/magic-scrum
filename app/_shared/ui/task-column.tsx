@@ -5,7 +5,7 @@ import {
 	SortableContext,
 	verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { TaskCard } from "./task-card";
+import { TaskCard } from "@/app/_shared/ui/task-card";
 
 type Task = {
 	id: string;
@@ -54,7 +54,7 @@ export const TaskColumn = ({
 					{title}
 				</h3>
 				<p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-					{tasks.length} مهام
+					{tasks.length} تاسكات
 				</p>
 			</div>
 			<div
@@ -88,7 +88,7 @@ export const TaskColumn = ({
 						}`}
 					>
 						<span className="text-sm text-gray-500 dark:text-gray-400">
-							اسحب المهمة هنا
+							اسحب التاسك هنا
 						</span>
 					</div>
 				</SortableContext>

@@ -38,11 +38,11 @@ export const DynamicDialog: FC<DaynamicDialogProps> = ({
 					className
 				)}
 			>
-				<DialogHeader>
+				<DialogHeader className="flex flex-col justify-center items-center">
 					<DialogTitle>{title}</DialogTitle>
 					<DialogDescription>{description}</DialogDescription>
 				</DialogHeader>
-				<div className="relative">
+				<div className="relative my-3">
 					<Separator className="absolute bottom-1/4 left-1/2 right-1/2 rtl:translate-x-1/2 ltr:-translate-x-1/2 w-screen" />
 				</div>
 				<div className="grid gap-4 py-6 relative">{children}</div>

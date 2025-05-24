@@ -9,7 +9,7 @@ import { store } from '@/app/_shared/lib/store';
 export const Providers: FC<{children: ReactNode}> = ({ children }) => {
 	return (
 		<Provider store={store}>
-			<ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+			<ThemeProvider attribute="class" enableSystem>
 				<DirectionProvider dir='rtl'>
 					{children}
 				</DirectionProvider>

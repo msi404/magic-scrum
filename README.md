@@ -1,6 +1,6 @@
-# 🦄 Unicorn Scrum
+# 🪄 Magic Scrum
 
-**Unicorn Scrum** is a modern, web-based Scrum management application designed to be fast, clean, and developer-friendly. Built with cutting-edge tools and thoughtful architecture, it delivers a smooth project planning experience — with just a hint of magic. ✨
+**Magic Scrum** is a modern, web-based Scrum management application designed to be fast, clean, and developer-friendly. Built with cutting-edge tools and thoughtful architecture, it delivers a smooth project planning experience — with just a hint of magic. ✨
 
 ---
 
@@ -29,8 +29,6 @@
 | `Tailwind CSS`  | Utility-first styling      |
 | `Framer Motion` | UI animations              |
 | `FSD`           | Scalable project structure |
-
----
 
 ---
 
@@ -68,5 +66,3 @@ PRs are welcome! Make your code readable, modular, and magical. 🌈
 ## 📜 License
 
 MIT — Feel free to use, modify, and deploy.
-
----

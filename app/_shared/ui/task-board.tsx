@@ -1,12 +1,4 @@
 "use client";
-
-import {
-	useGetTasksQuery,
-	useEditTaskMutation,
-} from "@/app/_shared/api/tasksApi";
-import { useCreateTask } from "@/app/_shared/models/use-create-task";
-import { useEditTask } from "@/app/_shared/models/use-edit-task";
-import { useDeleteTaskMutation } from "@/app/_shared/api/tasksApi";
 import { useState } from "react";
 import {
 	DndContext,
@@ -18,9 +10,17 @@ import {
 	PointerSensor,
 	DragOverEvent,
 } from "@dnd-kit/core";
-import { TaskColumn } from "./task-column";
-import { TaskCard } from "./task-card";
-
+import {
+	useGetTasksQuery,
+	useEditTaskMutation,
+} from "@/app/_shared/api/tasksApi";
+import { useCreateTask } from "@/app/_shared/models/use-create-task";
+import { useEditTask } from "@/app/_shared/models/use-edit-task";
+import { useDeleteTaskMutation } from "@/app/_shared/api/tasksApi";
+import { TaskColumn } from "@/app/_shared/ui/task-column";
+import { TaskCard } from "@/app/_shared/ui/task-card";
+import { Show } from '@/app/_shared/utils/show'
+import {For} from '@/app/_shared/utils/for'
 type Task = {
 	id: string;
 	title: string;
@@ -28,6 +28,8 @@ type Task = {
 	date: string;
 	status: "to do" | "progress" | "complete";
 };
+
+// card background color based on status
 
 const statusConfig = {
 	"to do": {
@@ -44,19 +46,32 @@ const statusConfig = {
 	},
 } as const;
 
-export const TaskBoard = () => {
-	const { data: tasks = [] } = useGetTasksQuery({});
-	const [deleteTask] = useDeleteTaskMutation();
-	const [editTask] = useEditTaskMutation();
-	const [openPopoverId, setOpenPopoverId] = useState<string | null>(null);
-	const [editingTask, setEditingTask] = useState<Task | undefined>(undefined);
-	const [activeTask, setActiveTask] = useState<Task | null>(null);
+export const TaskBoard = () =>
+{
+	// fetching data
+	const { data: tasks = [] } = useGetTasksQuery( {} );
+	
+	// deleting task
+	const [ deleteTask ] = useDeleteTaskMutation();
+	// edit task
+	const [ editTask ] = useEditTaskMutation();
+
+	// pass task id to popover
+	const [ openPopoverId, setOpenPopoverId ] = useState<string | null>( null );
+	// pass task current data
+	const [ editingTask, setEditingTask ] = useState<Task | undefined>( undefined );
+	// overlayed task
+	const [ activeTask, setActiveTask ] = useState<Task | null>( null );
+	// create task dailog and logic
 	const { CreateTaskDialog } = useCreateTask();
+
+	// edit task dailog and logic
 	const { EditTaskDialog, setOpen: setEditDialogOpen } = useEditTask({
 		task: editingTask,
 		button: null,
 	});
 
+	// pointer sensors
 	const sensors = useSensors(
 		useSensor(PointerSensor, {
 			activationConstraint: {
@@ -65,10 +80,12 @@ export const TaskBoard = () => {
 		})
 	);
 
+	// filtering tasks by status
 	const getTasksByStatus = (status: Task["status"]) => {
 		return tasks.filter((task: Task) => task.status === status);
 	};
 
+	// drag event handler by dnd kit
 	const handleDragStart = (event: DragStartEvent) => {
 		const { active } = event;
 		const task = tasks.find((t: Task) => t.id === active.id);
@@ -77,6 +94,7 @@ export const TaskBoard = () => {
 		}
 	};
 
+	// drop event handler by dnd kit
 	const handleDragOver = (event: DragOverEvent) => {
 		const { active, over } = event;
 		if (!over) return;
@@ -127,8 +145,9 @@ export const TaskBoard = () => {
 				onDragEnd={handleDragEnd}
 			>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-					{Object.entries(statusConfig).map(([status, config]) => (
-						<TaskColumn
+					<For each={Object.entries(statusConfig)}>
+						{ ( [ status, config ] ) => (
+							<TaskColumn
 							key={status}
 							id={status}
 							title={config.title}
@@ -146,12 +165,14 @@ export const TaskBoard = () => {
 							}}
 							onDeleteCancel={() => setOpenPopoverId(null)}
 						/>
-					))}
+						)}
+					</For>
 				</div>
 				<DragOverlay>
-					{activeTask ? (
-						<TaskCard
-							task={activeTask}
+					 
+					<Show when={activeTask !== null} fallback={null}>
+					<TaskCard
+							task={activeTask!}
 							onEdit={() => {}}
 							onDelete={() => {}}
 							isDeleting={false}
@@ -159,10 +180,12 @@ export const TaskBoard = () => {
 							onDeleteCancel={() => {}}
 							isDragging={true}
 						/>
-					) : null}
+					</Show>
 				</DragOverlay>
 			</DndContext>
-			{editingTask && <EditTaskDialog />}
+			<Show when={editingTask !== null}>
+			<EditTaskDialog />
+			</Show>
 		</div>
 	);
 };

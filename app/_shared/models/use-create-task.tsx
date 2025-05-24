@@ -60,9 +60,9 @@ export const useCreateTask = () => {
 
   const CreateTaskDialog = () => (
     <DynamicDialog
-      button={<Button>إنشاء مهمة جديدة</Button>}
-      title="إنشاء مهمة جديدة"
-      description="قم بإدخال تفاصيل المهمة الجديدة"
+      button={<Button>إنشاء تاسك جديد</Button>}
+      title="إنشاء تاسك جديد"
+      description="قم بإدخال تفاصيل التاسك الجديد"
       open={open}
       onOpenChange={handleOpenChange}
     >

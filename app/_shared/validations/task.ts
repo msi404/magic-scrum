@@ -5,7 +5,7 @@ export const taskSchema = z.object({
   description: z.string().min(1, "الوصف مطلوب"),
   date: z.string().min(1, "التاريخ مطلوب"),
   status: z.enum(["to do", "progress", "complete"], {
-    errorMap: () => ({ message: "الحالة يجب أن تكون: to do, progress, أو complete" })
+    errorMap: () => ({ message: "الحالة يجب أن تكون: قيد التنفيذ , قيد المراجعة أو مكتملة" })
   }),
 });
 
