@@ -14,9 +14,10 @@ import {
 	useGetTasksQuery,
 	useEditTaskMutation
 } from '@/app/_shared/api/tasksApi'
-import { useCreateTask } from '@/app/_shared/models/use-create-task'
+import { CreateTask } from '@/app/_shared/ui/create-task'
 import { useEditTask } from '@/app/_shared/models/use-edit-task'
 import { useDeleteTaskMutation } from '@/app/_shared/api/tasksApi'
+import { EditTask } from '@/app/_shared/ui/edit-task'
 import { TaskColumn } from '@/app/_shared/ui/task-column'
 import { TaskCard } from '@/app/_shared/ui/task-card'
 import { Show } from '@/app/_shared/utils/show'
@@ -65,10 +66,9 @@ export const TaskBoard = () => {
 	// overlayed task
 	const [activeTask, setActiveTask] = useState<Task | null>(null)
 	// create task dailog and logic
-	const { CreateTaskDialog } = useCreateTask()
 
 	// edit task dailog and logic
-	const { EditTaskDialog, setOpen: setEditDialogOpen } = useEditTask({
+	const { setOpen: setEditDialogOpen } = useEditTask({
 		task: editingTask,
 		button: null
 	})
@@ -138,7 +138,7 @@ export const TaskBoard = () => {
 	return (
 		<div className="space-y-6 p-4">
 			<div className="flex justify-end mb-6">
-				<CreateTaskDialog />
+				<CreateTask />
 			</div>
 			<DndContext
 				sensors={sensors}
@@ -185,7 +185,7 @@ export const TaskBoard = () => {
 				</DragOverlay>
 			</DndContext>
 			<Show when={editingTask !== null}>
-				<EditTaskDialog />
+				<EditTask />
 			</Show>
 		</div>
 	)
