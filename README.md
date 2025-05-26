@@ -1,4 +1,3 @@
-````md
 # 🪄 Magic Scrum
 
 **Magic Scrum** is a modern, web-based Scrum management application designed to be fast, clean, and developer-friendly. Built with cutting-edge tools and thoughtful architecture, it delivers a smooth project planning experience — with just a hint of magic. ✨
@@ -14,7 +13,7 @@
 * 🧼 **Clean Code** principles throughout
 * 🔁 **CRUD operations** with *nearly* **Optimistic UI** updates
 * 🎭 **Framer Motion** animations for a delightful UX
-* 🔧 **React + Next.js** for fast and flexible rendering
+* 🔧 **React + Next** for fast and flexible rendering
 * 🛡️ **Husky + Commitlint** to enforce conventional commits and protect code quality
 
 ---
@@ -24,7 +23,6 @@
 | Tool             | Purpose                          |
 | ---------------- | -------------------------------- |
 | `React`          | UI Framework                     |
-| `Next.js`        | SSR & routing                    |
 | `Redux Toolkit`  | State management                 |
 | `RTK Query`      | Data fetching & caching          |
 | `dnd-kit`        | Drag & drop functionality        |
@@ -91,5 +89,3 @@ fix: resolve drag preview offset issue on mobile
 ## 📜 License
 
 MIT — Feel free to use, modify, and deploy.
-
-```
