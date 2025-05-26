@@ -1,11 +1,11 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const baseURL = process.env.NEXT_PUBLIC_BASE_URL
-export const baseApi = baseURL + '/api/';
+export const baseApi = baseURL + '/api/'
 
-export const tasksApi = createApi( {
+export const tasksApi = createApi({
 	reducerPath: 'tasksApi',
-	baseQuery: fetchBaseQuery( { baseUrl: baseApi } ),
+	baseQuery: fetchBaseQuery({ baseUrl: baseApi }),
 	tagTypes: ['Tasks'],
 	endpoints: () => ({})
-}) 
+})

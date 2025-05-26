@@ -5,6 +5,8 @@ export const Container: FC<{ children: ReactNode; className?: string }> = ({
 	className
 }) => {
 	return (
-		<div className={cn('container mx-auto px-4 py-8', className)}>{children}</div>
+		<div className={cn('container mx-auto px-4 py-8', className)}>
+			{children}
+		</div>
 	)
 }

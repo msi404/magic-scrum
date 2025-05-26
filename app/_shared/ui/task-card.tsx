@@ -1,43 +1,43 @@
-"use client";
+'use client'
 
-import { Card, CardContent } from "@/app/_shared/ui/card";
-import { Button } from "@/app/_shared/ui/button";
+import { Card, CardContent } from '@/app/_shared/ui/card'
+import { Button } from '@/app/_shared/ui/button'
 import {
 	Popover,
 	PopoverContent,
-	PopoverTrigger,
-} from "@/app/_shared/ui/popover";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+	PopoverTrigger
+} from '@/app/_shared/ui/popover'
+import { useSortable } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 type Task = {
-	id: string;
-	title: string;
-	description: string;
-	date: string;
-	status: "to do" | "progress" | "complete";
-};
+	id: string
+	title: string
+	description: string
+	date: string
+	status: 'to do' | 'progress' | 'complete'
+}
 
 const statusGradients = {
-	"to do":
-		"bg-gradient-to-br from-green-50/80 via-green-100/80 to-green-200/80 dark:from-green-900/80 dark:via-green-800/80 dark:to-green-700/80 border-green-100/20 dark:border-green-800/20",
+	'to do':
+		'bg-gradient-to-br from-green-50/80 via-green-100/80 to-green-200/80 dark:from-green-900/80 dark:via-green-800/80 dark:to-green-700/80 border-green-100/20 dark:border-green-800/20',
 	progress:
-		"bg-gradient-to-br from-yellow-50/80 via-yellow-100/80 to-yellow-200/80 dark:from-yellow-900/80 dark:via-yellow-800/80 dark:to-yellow-700/80 border-yellow-100/20 dark:border-yellow-800/20",
+		'bg-gradient-to-br from-yellow-50/80 via-yellow-100/80 to-yellow-200/80 dark:from-yellow-900/80 dark:via-yellow-800/80 dark:to-yellow-700/80 border-yellow-100/20 dark:border-yellow-800/20',
 	complete:
-		"bg-gradient-to-br from-blue-50/80 via-blue-100/80 to-blue-200/80 dark:from-blue-900/80 dark:via-blue-800/80 dark:to-blue-700/80 border-blue-100/20 dark:border-blue-800/20",
-} as const;
+		'bg-gradient-to-br from-blue-50/80 via-blue-100/80 to-blue-200/80 dark:from-blue-900/80 dark:via-blue-800/80 dark:to-blue-700/80 border-blue-100/20 dark:border-blue-800/20'
+} as const
 
 type TaskCardProps = {
-	task: Task;
-	onEdit: () => void;
-	onDelete: () => void;
-	isDeleting: boolean;
-	onDeleteConfirm: () => void;
-	onDeleteCancel: () => void;
-	isDragging?: boolean;
-};
+	task: Task
+	onEdit: () => void
+	onDelete: () => void
+	isDeleting: boolean
+	onDeleteConfirm: () => void
+	onDeleteCancel: () => void
+	isDragging?: boolean
+}
 
 export const TaskCard = ({
 	task,
@@ -46,36 +46,36 @@ export const TaskCard = ({
 	isDeleting,
 	onDeleteConfirm,
 	onDeleteCancel,
-	isDragging = false,
+	isDragging = false
 }: TaskCardProps) => {
-	const [isExiting, setIsExiting] = useState(false);
+	const [isExiting, setIsExiting] = useState(false)
 	const {
 		attributes,
 		listeners,
 		setNodeRef,
 		transform,
 		transition,
-		isDragging: isSortableDragging,
+		isDragging: isSortableDragging
 	} = useSortable({
 		id: task.id,
 		data: {
-			type: "task",
-			task,
-		},
-	});
+			type: 'task',
+			task
+		}
+	})
 
 	const style = {
 		transform: CSS.Transform.toString(transform),
 		transition,
-		opacity: isSortableDragging ? 0.5 : 1,
-	};
+		opacity: isSortableDragging ? 0.5 : 1
+	}
 
 	const handleDelete = () => {
-		setIsExiting(true);
+		setIsExiting(true)
 		setTimeout(() => {
-			onDeleteConfirm();
-		}, 300);
-	};
+			onDeleteConfirm()
+		}, 300)
+	}
 
 	const cardContent = (
 		<Card
@@ -84,7 +84,7 @@ export const TaskCard = ({
 			className={`p-4 cursor-grab active:cursor-grabbing ${
 				statusGradients[task.status]
 			} backdrop-blur-sm border shadow-lg hover:shadow-xl transition-all duration-300 ${
-				isDragging ? "opacity-90" : ""
+				isDragging ? 'opacity-90' : ''
 			}`}
 			{...attributes}
 			{...listeners}
@@ -111,7 +111,7 @@ export const TaskCard = ({
 						</Button>
 						<Popover
 							open={isDeleting}
-							onOpenChange={open => !open && onDeleteCancel()}
+							onOpenChange={(open) => !open && onDeleteCancel()}
 						>
 							<PopoverTrigger asChild>
 								<Button
@@ -153,10 +153,10 @@ export const TaskCard = ({
 				</div>
 			</CardContent>
 		</Card>
-	);
+	)
 
 	if (isDragging) {
-		return cardContent;
+		return cardContent
 	}
 
 	return (
@@ -170,8 +170,8 @@ export const TaskCard = ({
 						scale: 0.8,
 						transition: {
 							duration: 0.3,
-							ease: "easeInOut",
-						},
+							ease: 'easeInOut'
+						}
 					}}
 					layout
 				>
@@ -179,5 +179,5 @@ export const TaskCard = ({
 				</motion.div>
 			)}
 		</AnimatePresence>
-	);
-};
+	)
+}

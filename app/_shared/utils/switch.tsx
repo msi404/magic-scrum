@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import{
+import {
 	ReactNode,
 	FC,
 	Children,
@@ -12,7 +12,7 @@ interface MatchProps {
 	when:
 		| boolean
 		| ReactElement<unknown, string | JSXElementConstructor<any>>
-		| undefined 
+		| undefined
 	children: ReactNode
 }
 
@@ -20,7 +20,7 @@ export const Match: FC<MatchProps> = ({ when, children }) =>
 	when ? <>{children}</> : null
 
 interface SwitchProps {
-	children: ReactNode 
+	children: ReactNode
 }
 
 export const Switch: FC<SwitchProps> = ({ children }) => {

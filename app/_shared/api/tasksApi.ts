@@ -1,48 +1,48 @@
-import { tasksApi as api } from "@/app/_shared/lib/features/apiSlice";
+import { tasksApi as api } from '@/app/_shared/lib/features/apiSlice'
 
 const injectRtkApi = api.injectEndpoints({
-	endpoints: builder => ({
+	endpoints: (builder) => ({
 		getTasks: builder.query({
-			query: () => "/tasks",
-			providesTags: [{ type: "Tasks" }],
+			query: () => '/tasks',
+			providesTags: [{ type: 'Tasks' }]
 		}),
 		editTask: builder.mutation({
-			query: arg => ({
+			query: (arg) => ({
 				url: `/tasks/${arg.id}`,
-				method: "PUT",
-				body: arg,
+				method: 'PUT',
+				body: arg
 			}),
-			invalidatesTags: [{ type: "Tasks" }],
+			invalidatesTags: [{ type: 'Tasks' }]
 		}),
 		createTask: builder.mutation({
-			query: arg => ({
-				url: "/tasks",
-				method: "POST",
-				body: arg,
+			query: (arg) => ({
+				url: '/tasks',
+				method: 'POST',
+				body: arg
 			}),
-			invalidatesTags: [{ type: "Tasks" }],
+			invalidatesTags: [{ type: 'Tasks' }]
 		}),
 		deleteTask: builder.mutation({
-			query: id => ({
+			query: (id) => ({
 				url: `/tasks/${id}`,
-				method: "DELETE",
+				method: 'DELETE'
 			}),
-			invalidatesTags: [{ type: "Tasks" }],
+			invalidatesTags: [{ type: 'Tasks' }]
 		}),
 		getTask: builder.query({
-			query: id => ({
+			query: (id) => ({
 				url: `/tasks/${id}`,
-				providesTags: [{ type: "Tasks" }],
-			}),
-		}),
+				providesTags: [{ type: 'Tasks' }]
+			})
+		})
 	}),
-	overrideExisting: false,
-});
+	overrideExisting: false
+})
 
 export const {
 	useGetTasksQuery,
 	useDeleteTaskMutation,
 	useCreateTaskMutation,
 	useEditTaskMutation,
-	useGetTaskQuery,
-} = injectRtkApi;
+	useGetTaskQuery
+} = injectRtkApi

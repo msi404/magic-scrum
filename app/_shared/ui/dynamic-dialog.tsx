@@ -1,24 +1,24 @@
-import { type FC, type ReactNode } from "react";
-import { cn } from "@/app/_shared/lib/utils";
+import { type FC, type ReactNode } from 'react'
+import { cn } from '@/app/_shared/lib/utils'
 import {
 	Dialog,
 	DialogContent,
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-	DialogTrigger,
-} from "@/app/_shared/ui/dialog";
-import { Separator } from "@/app/_shared/ui/separator";
+	DialogTrigger
+} from '@/app/_shared/ui/dialog'
+import { Separator } from '@/app/_shared/ui/separator'
 
 type DaynamicDialogProps = {
-	button: ReactNode;
-	title: string;
-	description: string;
-	children: ReactNode;
-	className?: string;
-	open?: boolean;
-	onOpenChange?: (open: boolean) => void;
-};
+	button: ReactNode
+	title: string
+	description: string
+	children: ReactNode
+	className?: string
+	open?: boolean
+	onOpenChange?: (open: boolean) => void
+}
 
 export const DynamicDialog: FC<DaynamicDialogProps> = ({
 	button,
@@ -27,14 +27,14 @@ export const DynamicDialog: FC<DaynamicDialogProps> = ({
 	children,
 	className,
 	open,
-	onOpenChange,
+	onOpenChange
 }) => {
 	return (
 		<Dialog open={open} onOpenChange={onOpenChange}>
 			<DialogTrigger asChild>{button}</DialogTrigger>
 			<DialogContent
 				className={cn(
-					"max-w-[425px] md:max-w-[600px] max-h-[100%] overflow-y-auto",
+					'max-w-[425px] md:max-w-[600px] max-h-[100%] overflow-y-auto',
 					className
 				)}
 			>
@@ -48,5 +48,5 @@ export const DynamicDialog: FC<DaynamicDialogProps> = ({
 				<div className="grid gap-4 py-6 relative">{children}</div>
 			</DialogContent>
 		</Dialog>
-	);
-};
+	)
+}

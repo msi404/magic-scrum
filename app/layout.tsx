@@ -1,27 +1,27 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Providers } from "@/app/_shared/providers/providers";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Providers } from '@/app/_shared/providers/providers'
+import './globals.css'
 
 const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
+	variable: '--font-geist-sans',
+	subsets: ['latin']
+})
 
 const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
+	variable: '--font-geist-mono',
+	subsets: ['latin']
+})
 
 export const metadata: Metadata = {
-	title: "Unicorn Scrum",
-	description: "A magical project management platform",
-};
+	title: 'Unicorn Scrum',
+	description: 'A magical project management platform'
+}
 
 export default function RootLayout({
-	children,
+	children
 }: Readonly<{
-	children: React.ReactNode;
+	children: React.ReactNode
 }>) {
 	return (
 		<html lang="ar" dir="rtl" suppressHydrationWarning>
@@ -41,5 +41,5 @@ export default function RootLayout({
 				</Providers>
 			</body>
 		</html>
-	);
+	)
 }

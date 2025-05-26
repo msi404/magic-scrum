@@ -1,9 +1,9 @@
-"use client";
-import { type NextPage } from "next";
-import { Container } from "@/app/_shared/ui/container";
-import { Card, CardContent } from '@/app/_shared/ui/card';
-import { TaskBoard } from "@/app/_shared/ui/task-board";
-import { BackgroundBeams } from "@/app/_shared/ui/background-beams";
+'use client'
+import { type NextPage } from 'next'
+import { Container } from '@/app/_shared/ui/container'
+import { Card, CardContent } from '@/app/_shared/ui/card'
+import { TaskBoard } from '@/app/_shared/ui/task-board'
+import { BackgroundBeams } from '@/app/_shared/ui/background-beams'
 
 const Home: NextPage = () => {
 	return (
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 			</Card>
 			<BackgroundBeams className="z-[-1]" />
 		</Container>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
