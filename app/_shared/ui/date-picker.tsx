@@ -5,13 +5,13 @@ import { format, startOfDay } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 
 import { cn } from '@/app/_shared/lib/utils'
-import { Button } from '@/app/_shared/ui/button'
-import { Calendar } from '@/app/_shared/ui/calendar'
 import {
+	Button,
+	Calendar,
 	Popover,
 	PopoverContent,
 	PopoverTrigger
-} from '@/app/_shared/ui/popover'
+} from '@/app/_shared/ui'
 
 interface DatePickerProps {
 	value: Date | null

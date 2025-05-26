@@ -1,9 +1,12 @@
 'use client'
 import { type NextPage } from 'next'
-import { Container } from '@/app/_shared/ui/container'
-import { Card, CardContent } from '@/app/_shared/ui/card'
-import { TaskBoard } from '@/app/_shared/ui/task-board'
-import { BackgroundBeams } from '@/app/_shared/ui/background-beams'
+import {
+	BackgroundBeams,
+	TaskBoard,
+	Card,
+	CardContent,
+	Container
+} from '@/app/_shared/ui'
 
 const Home: NextPage = () => {
 	return (

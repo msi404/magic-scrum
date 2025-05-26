@@ -2,24 +2,22 @@
 import { type FC } from 'react'
 import { useEditTask } from '@/app/_shared/models/use-edit-task'
 import {
+	DynamicDialog,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+	Button,
+	Input,
 	Form,
 	FormControl,
 	FormField,
 	FormItem,
 	FormLabel,
-	FormMessage
-} from '@/app/_shared/ui/form'
-import { Input } from '@/app/_shared/ui/input'
-import { Button } from '@/app/_shared/ui/button'
-import { DynamicDialog } from '@/app/_shared/ui/dynamic-dialog'
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue
-} from '@/app/_shared/ui/select'
-import { DatePicker } from '@/app/_shared/ui/date-picker'
+	FormMessage,
+	DatePicker
+} from '@/app/_shared/ui'
 
 export const EditTask: FC = () => {
 	const { button, onOpenChange, open, onSubmit, form, isLoading } =

@@ -1,12 +1,13 @@
 'use client'
 
-import { Card, CardContent } from '@/app/_shared/ui/card'
-import { Button } from '@/app/_shared/ui/button'
 import {
+	Card,
+	CardContent,
+	Button,
 	Popover,
 	PopoverContent,
 	PopoverTrigger
-} from '@/app/_shared/ui/popover'
+} from '@/app/_shared/ui'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { motion, AnimatePresence } from 'framer-motion'

@@ -3,24 +3,22 @@ import { type FC } from 'react'
 import { useCreateTask } from '@/app/_shared/models/use-create-task'
 
 import {
+	Input,
+	Button,
+	DynamicDialog,
 	Form,
 	FormControl,
 	FormField,
 	FormItem,
 	FormLabel,
-	FormMessage
-} from '@/app/_shared/ui/form'
-import { Input } from '@/app/_shared/ui/input'
-import { Button } from '@/app/_shared/ui/button'
-import { DynamicDialog } from '@/app/_shared/ui/dynamic-dialog'
-import {
+	FormMessage,
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
-	SelectValue
-} from '@/app/_shared/ui/select'
-import { DatePicker } from '@/app/_shared/ui/date-picker'
+	SelectValue,
+	DatePicker
+} from '@/app/_shared/ui'
 
 export const CreateTask: FC = () => {
 	const { open, onOpenChange, form, onSubmit } = useCreateTask()

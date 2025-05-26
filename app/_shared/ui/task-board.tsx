@@ -14,12 +14,9 @@ import {
 	useGetTasksQuery,
 	useEditTaskMutation
 } from '@/app/_shared/api/tasksApi'
-import { CreateTask } from '@/app/_shared/ui/create-task'
+import { CreateTask, EditTask, TaskColumn, TaskCard } from '@/app/_shared/ui'
 import { useEditTask } from '@/app/_shared/models/use-edit-task'
 import { useDeleteTaskMutation } from '@/app/_shared/api/tasksApi'
-import { EditTask } from '@/app/_shared/ui/edit-task'
-import { TaskColumn } from '@/app/_shared/ui/task-column'
-import { TaskCard } from '@/app/_shared/ui/task-card'
 import { Show } from '@/app/_shared/utils/show'
 import { For } from '@/app/_shared/utils/for'
 type Task = {

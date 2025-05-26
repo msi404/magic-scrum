@@ -2,7 +2,7 @@
 
 import { useDroppable } from '@dnd-kit/core'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
-import { TaskCard } from '@/app/_shared/ui/task-card'
+import { TaskCard } from '@/app/_shared/ui'
 
 type Task = {
 	id: string
